@@ -1,0 +1,10 @@
+<div class="row-fluid">
+  <div class="span3"><%= image_tag(article.image_url, size: "300x300") %></div>
+  <div class="span9">
+    <%= article.created_at.strftime("%d %B %Y") %>
+      <p class="title"><%= article.title %></p>
+      <p class="content"><%= article.short_content %>
+        <%= link_to 'Подробнее', article_path(article)%></p>
+  </div>
+</div>
+</br>

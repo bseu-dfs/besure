@@ -1,0 +1,27 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.article {
+	display: inline-block;
+	width: 700px;
+	padding: 21px;
+	border: 1px solid #d7d7d7;
+}
+
+h1.listing {
+	text-decoration: underline;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+.content {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	font-size: 16px;
+}
+
+h3.title {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	font-size: 25px;
+	color: #B51BE0;
+	text-decoration: underline;
+}

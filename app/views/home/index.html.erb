@@ -1,0 +1,32 @@
+<div class="span3"><%= image_tag("logo.png", size: "200x250") %></br></div>
+<div id="myCarousel" class="carousel slide span10 offset1" data-interval="2000">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><%= image_tag("life-header.jpg") %></div>
+    <div class="item"><%= image_tag("aa-life-insurance.jpg") %></div>
+    <div class="item"><%= image_tag("term-life-insurance-header.jpg") %></div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+<div class="span11">
+<h3>Курсы валют</h3>
+<%= render "exrates" %>
+
+<div class="span7">
+  <p id="welcome"><strong>Страхование в Беларуси</strong> развивается стремительными темпами. На начало 2013 года в Республике Беларусь насчитывается 25 страховых компаний. Количество страховых программ по различным видам страхования очень велико, что усложняет выбор страхователя. Благодаря нашему сервису потенциальные клиенты могут не выходя из дома сравнить предложения по страховым продуктам от всех страховых компаний Республики Беларусь и за считанные минуты подобрать оптимальный вариант страхования. </br><strong>"BeSure"</strong> - это независимый онлайн ресурс страховой тематики, дающий наиболее полную информацию о текущей ситуации на страховом рынке Беларуси. Спросите себя: во сколько вы оцените свой дом, автомобиль или даже жизнь? Тысячи? Сотни тысяч? Миллионы? Мы приложим все усилия, чтобы помочь Вам сделать правильный выбор! <i>BeSure - будь уверен в завтрашнем дне!</i><p>
+</div>
+
+<div class="span2 offset9">
+  <div id="social">
+    <%= link_to(image_tag("facebook.gif", size: "40x40"), "https://www.facebook.com/nationwide") %>
+    <%= link_to(image_tag("vkontakte.gif", size: "39x39"), "http://vk.com/id88184432") %>
+    <%= link_to(image_tag("twitter.gif", size: "40x40"), "https://twitter.com/a_lesika") %>
+  </div>
+</div>

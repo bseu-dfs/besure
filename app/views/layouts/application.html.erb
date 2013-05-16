@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BeSure</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navbar-inner">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#"><%= image_tag "emblem-umbrella21.png", size: "27x27" %></a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to t('.home'), root_path %></li>
+          <li><%= link_to t('.ensurence'), companies_path %></li>
+          <li><%= link_to t('.feedback'), messages_path %></li>
+          <li><%= link_to t('.offer'), choose_path %></li>
+          <li><%= link_to t('.analytics'), articles_path %></li>
+        </ul>
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+            <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to(t('.sign_in'), '#', :class => "popover-sign-in", 
+                  "data-content" => "#{render 'devise/sessions/new'}", remote: true) %></li>
+            <li><%= link_to(t('.sign_up'), '#', :class => "popover-sign-up", 
+                  "data-content" => "#{render 'devise/registrations/new'}", remote: true) %></li>
+          <% end -%>
+          <li class="dropdown">
+            <a class="dropdown-toggle" id="language-active" data-toggle="dropdown" href="#"> 
+              <% if params[:locale] == "en" %>
+                English
+              <%else%>
+                Русский
+              <% end %>
+            <b class="caret"></b></a>
+            <ul class="dropdown-menu" id="swatch-menu">
+              <% if params[:locale] == "en" %>
+                <li><%= link_to "Русский", root_path(locale: :ru), id: "language-inactive" %></li>
+              <%else%>
+                <li><%= link_to "English", root_path(locale: :en), id: "language-inactive" %></li>
+              <% end %>
+            </ul>
+          </li>
+          </li>
+        </ul>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <% flash.each do |key,msg| %>
+        <%= content_tag :p, msg, class: "alert alert-#{key}"%>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+</body>
+</html>

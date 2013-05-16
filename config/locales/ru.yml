@@ -1,0 +1,39 @@
+ru:
+  views:
+    pagination:
+      next: "Следующая &gt;"
+      previous: "&lt; Предыдущая"
+      first: "Первая"
+      last: "Последняя"
+  layouts:
+    application:
+      hello: "Привет Мир"
+      home: "Главная"
+      analytics: "Аналитика"
+      sign_out: "Выйти"
+      sign_in: "Войти"
+      sign_up: "Регистрация"
+      feedback: "Оставить Заявку"
+      ensurence: "Страхование"
+      offer: "Выбрать услугу"
+  messages:
+    index:
+      users_requests: "Заявки Пользователей"
+      leave_message: "Оставить Заявку"
+      title: "Какой вид страхование Вас интересует?"
+      content: "Вопросы/Комментарии"
+  articles:
+    index:
+      search: "Поиск"
+      ensurence_articles: "Статьи По Страхованию"
+  companies:
+    index:
+      search: "Поиск"
+      companies: "Страховые Компании"
+    filter:
+      legal: "Юридическое лицо"
+      individual: "Физическое лицо"
+  types:
+    index:
+      legal: "Юридическое лицо"
+      individual: "Физическое лицо"

@@ -1,0 +1,29 @@
+<h3 class="title"><%= @company.name %></h3>
+<h4><%= @type.name %></h4>
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+  <td>Name</td>
+  <td>Description</td>
+</tr>
+</thead>
+<% @services.each do |service| %>
+  <tr>
+     <td><%= service.name %></td>
+     <td><%= service.description %></td>
+  </tr>
+<% end %>
+</table>
+<%= form_for [@company, @type, Service.new] do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

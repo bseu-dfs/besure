@@ -1,0 +1,7 @@
+<%= simple_form_for(@company) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, input_html: { :style => "width:80em !important"} %>
+  <%= f.input :image_path %>
+  <%= f.input :short_content %>
+  <%= f.submit %>
+<% end %>

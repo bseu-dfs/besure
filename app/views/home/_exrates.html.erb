@@ -1,0 +1,9 @@
+<table class="table table-condensed table-hover span3">
+<% @currencies.each do |currency| %>
+  <tr>
+    <td><%= currency[:cur_abbreviation] %></td>
+    <td><%= currency[:cur_official_rate] %></td>
+    <td><%= currency[:cur_quot_name] %></td>
+  </tr>
+<% end %>
+</table>

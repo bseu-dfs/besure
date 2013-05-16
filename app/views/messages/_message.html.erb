@@ -1,0 +1,16 @@
+<article>
+  <header id="author">
+    <%= message.name %>
+		<%= message.user.email %>
+    <%= message.telephone %>
+	<p><%= message.created_at.strftime("on %d %B %Y") %></p>
+	<p><% if message.user == current_user %>
+          <%= link_to 'Destroy', message, method: :delete,
+            data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% end %></p>
+  </header>
+  <header id="content">
+    <p id="title"><%= message.title %></p>
+    <%= message.content %>
+  </header>
+</article>

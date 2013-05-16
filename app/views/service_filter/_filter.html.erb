@@ -1,0 +1,39 @@
+<div class="dropdown span2">
+  <a id="status" class="dropdown-toggle btn btn-primary btn-large" data-toggle="dropdown" href="#">
+          Выберите Статус Лица</a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <li><%= link_to "Юридическое лицо", choose_path(:entity => "legal"), remote: true,
+              class: "status" %></li>
+    <li><%= link_to "Физическое лицо", choose_path(:entity => "individual"), class: "status",
+            remote: true %></li>
+  </ul>
+  </br></br>
+</div>
+
+<div class="dropdown span2">
+</br></br></br></br>
+  <% if not @types.empty? %>
+    <a id='type' class="dropdown-toggle btn btn-primary btn-large type" data-toggle="dropdown" href="#">
+            Выберите Вид Услуги</a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <% @types.each do |type| %>
+        <li><%= link_to type, choose_path(:type => type, :entity => params[:entity]), remote: true,
+               class: "type" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="dropdown span2">
+  <% if not @services.empty? %>
+    </br></br></br></br></br></br></br></br>
+    <a id='service' class="dropdown-toggle btn btn-primary btn-large" data-toggle="dropdown" href="#">
+            Выберите Услугу</a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <% @services.each do |service| %>
+       <li><%= link_to service.name, choose_path(type: params[:type],
+                 entity: params[:entity], service: service.name), remote: true, class: "service" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

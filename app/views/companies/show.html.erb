@@ -1,0 +1,11 @@
+<h3 class="title"><%= @company.name %></h3>
+
+<p>
+  <%= raw @company.description %>
+</p>
+
+<%= link_to 'Back', companies_path, class: "btn btn-info" %>
+
+<% if current_user && current_user.admin? %>
+  <%= link_to "Create Type Of Service", company_types_path(@company) %>
+<% end %>

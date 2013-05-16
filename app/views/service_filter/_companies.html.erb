@@ -1,0 +1,11 @@
+<% @company_services.each do |service| %>
+	<div class="row-fluid">
+	  <div class="span3"><%= image_tag(service.company.image_path, size: "300x300") %></div>
+	  <div class="span9">
+	    <p class="title"><%= service.company.name %></p>
+	    <p class="content"><%= link_to service.name, service.description, class: "btn btn-link" %></p>
+	  </div>
+	</div>
+</br>
+<% end %>
+<%= paginate @company_services %>

@@ -1,0 +1,29 @@
+<h3 class="title"><%= @company.name %></h3>
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+  <td>Name</td>
+  <td>Entity</td>
+</tr>
+</thead>
+<% @types.each do |type| %>
+  <tr>
+     <td><%= link_to type.name, company_type_services_path(type.company, type) %></td>
+     <td><%= t(".#{type.entity}") %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= form_for [@company, Type.new] do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :entity %><br />
+    <%= f.select :entity, ["legal", "individual"] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+$("#filter").html("<%= escape_javascript render 'filter' %>")
+$("#status").text("<%= params[:entity] == 'individual' ? 'Физическое Лицо' : 'Юридическое Лицо' %>")
+$("#type").text("<%= params[:type] || 'Выберите Тип Услуги' %>")
+$("#service").text("<%= params[:service] || 'Выберите Услугу' %>")
+$("#companies").html("<%= escape_javascript render 'companies' %>")

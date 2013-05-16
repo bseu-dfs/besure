@@ -1,0 +1,12 @@
+<div id="error-sign-up"></div>
+<%= simple_form_for(resource, :as => resource_name,
+           :url => registration_path(resource_name),
+           :html => {:id => "sign_up_user"},
+           :format => :json,
+           :remote => true ) do |f| %>
+  <%= f.input :email %>
+
+  <%= f.input :password, label: "Пароль" %>
+  <%= f.input :password_confirmation, label: "Подтвердите пароль" %>
+  <%= f.submit t('.sign_up'), class: 'btn btn-primary'  %>
+<% end %>

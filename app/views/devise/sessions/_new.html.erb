@@ -1,0 +1,15 @@
+<div id="error-sign-in"></div>
+<%= simple_form_for(resource, :as => resource_name,
+                     :url => session_path(resource_name) ,
+                     :html => {:id => "sign_in_user"},
+                     :format => :json,
+                     :remote => true ) do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password, label: "Пароль" %>
+
+  <% if devise_mapping.rememberable? -%>
+  	<%= f.input :remember_me, :as => :boolean %>
+  <% end -%>
+
+  <%= f.submit "#{t(".sign_in")}", class: 'btn btn-primary' %>
+<% end %>

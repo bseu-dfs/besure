@@ -1,0 +1,19 @@
+<div class="row-fluid">
+  <div class="span3">
+  	<%= image_tag(company.image_path, size: "300x300") %>
+  	<ul>
+  	  <% company.types.take(3).each do |type| %>
+  	    <li><%= type.name %></li>
+  	  <% end %>
+      <% if company.services.size > 3 %>
+        <li>Другие виды страхования</li>
+      <% end %>
+  	</ul>
+  </div>
+  <div class="span9">
+    <p class="title"><%= company.name %></p>
+    <p class="content"><%= company.short_content %></p>
+    <p><%= link_to 'Подробнее', company, class: "btn btn-link" %></p>
+  </div>
+</div>
+</br>

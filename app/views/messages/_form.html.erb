@@ -1,0 +1,18 @@
+<div class="span3">
+  <%= simple_form_for Message.new, remote: true do |f| %>
+    <div class="control-group">
+      <%= f.input :name, class: ".new_message", label: "Имя:" %>
+    </div>
+    <div class="control-group">
+      <%= f.input :telephone, class: ".new_message", label: "Контактный телефон:" %>
+    </div>
+    <div class="control-group">
+      <%= f.input :title, class: ".new_message", label: "Какой вид страхования вас интересует?" %>
+    </div>
+    <div class="control-group">
+      <%= f.input :content, class: ".new_message",
+      		 input_html: {rows: 5, :style => "width:30em !important"}, label: "Вопросы/Комментарии:" %>
+    </div>
+    <%= f.submit class: "btn btn-info"%>
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+// Place all the styles related to the Messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#author {
+	display: table-cell;
+	width: 180px;
+	font-size: 15px;
+	font-weight:bold;
+	font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+} 
+#content {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	font-size: 15px;
+	display: table-cell;
+	width: 420px;
+}
+#messages article {
+	display: table;
+	padding: 21px;
+	width: 620px;
+	background: #E3E3E3;
+	border: 1px solid #d7d7d7;
+	margin-bottom: 7px;
+	/* Border-radius not implemented yet */
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+}
